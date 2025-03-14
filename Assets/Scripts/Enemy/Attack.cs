@@ -8,12 +8,14 @@ public class Attack : IEnemyStates
     float attackRange;
     float AttackTime;
     float nextAttack = 0;
+    Vector3 offset;
     public Attack(Enemy enemy, EnemyStateMAchine enemyStateMachine)
     {
         this.enemy = enemy;
         this.enemyStateMachine = enemyStateMachine;
         attackRange = enemy.AttackRange;
         AttackTime = enemy.AttackTime;
+        offset = enemy.AttackOffset;
 
     }
     public void Enter()
@@ -33,23 +35,17 @@ public class Attack : IEnemyStates
 
     public void Update()
     {
-        Collider2D[] cols = Physics2D.OverlapCircleAll(enemy.transform.position, attackRange, enemy.PlayerLayer);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(enemy.transform.position + offset, attackRange, enemy.PlayerLayer);
         if (cols.Length == 0)
         {
             enemyStateMachine.Transition(enemyStateMachine.idle);
         }
         else
         {
-            foreach (var col in cols)
+            if(Time.time > nextAttack)
             {
-                if (col.CompareTag("Player"))
-                {
-                    PlayerMain player = col.GetComponent<PlayerMain>();
-                    if (player != null && Time.time>nextAttack) { 
-                        player.SwitchHurt();
-                        nextAttack = Time.time + AttackTime;
-                    }
-                }
+                nextAttack = Time.time + AttackTime;
+                //Animation Logic
             }
         }
     }
