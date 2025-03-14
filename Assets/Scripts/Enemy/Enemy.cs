@@ -2,6 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CharacterController2D))]
+
 public class Enemy : MonoBehaviour
 {
     EnemyStateMAchine enemyStateMachine;
@@ -15,7 +16,8 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     [SerializeField] Transform hitPos;
     [SerializeField]
-    [Range(0.1f,0.5f)]float hitRange = 0.1f;
+    [Range(0.1f,1f)]float hitRange = 0.1f;
+    [SerializeField] private EnemyType enemyType;
 
     public float DetectionRange { get { return detectionRange; } }
     public float AttackRange { get { return attackRange; } }
@@ -63,10 +65,17 @@ public class Enemy : MonoBehaviour
     }
     public void HitFrame()
     {
+        //switch()
         Collider2D col = Physics2D.OverlapCircle(hitPos.position, hitRange, playerLayer);
         if (col != null)
         {
             col.GetComponent<PlayerMain>().SwitchHurt();
         }
     }
+}
+public enum EnemyType
+{
+    Normal,
+    Swordsman,
+    Archer
 }
