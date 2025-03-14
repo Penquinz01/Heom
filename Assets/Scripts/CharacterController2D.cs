@@ -10,6 +10,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] LayerMask Ground;
     private float defaultGravityScale;
     [SerializeField] float jumpMultiplier = 2.5f;
+    public bool StartedJump=false;
     public Vector2 _movement { private get; set; }
     public float speedY { get => _rigidbody2D.linearVelocityY; }
     
@@ -50,6 +51,7 @@ public class CharacterController2D : MonoBehaviour
     {
         if (isGrounded())
         {
+            StartedJump = true;
             _rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
         }
     }

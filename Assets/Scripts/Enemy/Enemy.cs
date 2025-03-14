@@ -87,6 +87,10 @@ public class Enemy : MonoBehaviour
             default:break;
         }
     }
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 }
 public enum EnemyType
 {

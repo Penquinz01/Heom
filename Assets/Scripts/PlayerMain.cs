@@ -9,29 +9,45 @@ public class PlayerMain : MonoBehaviour
     Vector2 move;
     private bool isHurt = false;
     [SerializeField] float hitStopTime = 0.3f;
-    [SerializeField] Transform top;
-    [SerializeField] Transform bottom;
-    [SerializeField] Transform left;
-    [SerializeField] Transform right;
-    [SerializeField] float maxHeight = 1.5f;
-    [SerializeField] float maxRange = 2f;
-    public float initialVelJump;
+    private float initialVelJump =12f;
+    private Animator anim;
+    Rigidbody2D rb;
+    [SerializeField]Transform attackPoint;
+    [SerializeField] float attackRange = 0.5f;
+    [SerializeField] float DashForce = 12f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        maxRange = Mathf.Abs(left.position.x - right.position.x);
-        maxHeight = top.position.y - bottom.position.y;
+        anim = GetComponent<Animator>();
         input = GetComponent<PlayerInput>();
         controller = GetComponent<CharacterController2D>();
         input.Jump +=StartJump;
-        initialVelJump = (2 * maxHeight * controller._movementSpeed) / (maxRange / 2);
-        float gravityValue = (-2 * maxHeight * controller._movementSpeed * controller._movementSpeed) / (maxRange * maxRange / 4);
-        Physics2D.gravity = new Vector2(0, gravityValue);
+        input.Attack += PlayerAttack;
         controller._jumpForce = initialVelJump;
-        Debug.Log("Initial Jump Velocity: " + initialVelJump);
-        Debug.Log("Gravity Value: " + gravityValue);
+        rb = GetComponent<Rigidbody2D>();
     }
 
+    private void PlayerAttack()
+    {
+        rb.AddForce(transform.right * DashForce, ForceMode2D.Impulse);
+        anim.SetBool("isAttack",true);
+    }
+    public void EndAttack()
+    {
+        anim.SetBool("isAttack", false);
+    } 
+    public void OnHitFrame()
+    {
+        Collider2D[] cols = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
+        foreach (Collider2D col in cols)
+        {
+            Enemy enemy = col.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.Die();
+            }
+        }
+    }
     private void StartJump()
     {
         controller.Jump();
@@ -42,6 +58,13 @@ public class PlayerMain : MonoBehaviour
     {
         move = input.Movement;
         controller.SetMovement(move);
+        anim.SetFloat("isWalk",Mathf.Abs(rb.linearVelocityX));
+        anim.SetBool("isGrounded", controller.isGrounded());
+        if(controller.StartedJump == true)
+        {
+            controller.StartedJump = false;
+            anim.SetTrigger("isJump");
+        }
     }
     public void SwitchHurt()
     {
@@ -60,5 +83,9 @@ public class PlayerMain : MonoBehaviour
         yield return new WaitForSecondsRealtime(hitStopTime);
         Time.timeScale = 1f;
         isHurt = false;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
