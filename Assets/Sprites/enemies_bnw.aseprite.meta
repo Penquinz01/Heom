@@ -861,8 +861,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: enemies_bnw_34
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.7, y: 0.5}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -987,8 +987,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: enemies_bnw_40
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.7, y: 0.5}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -1008,8 +1008,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: enemies_bnw_41
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.6, y: 0.5}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -1029,8 +1029,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: enemies_bnw_42
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.36, y: 0.5}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -1050,8 +1050,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: enemies_bnw_43
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.4, y: 0.5}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -1072,7 +1072,7 @@ ScriptedImporter:
   - name: enemies_bnw_44
     originalName: 
     pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -1092,8 +1092,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: enemies_bnw_45
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.35, y: 0.5}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
