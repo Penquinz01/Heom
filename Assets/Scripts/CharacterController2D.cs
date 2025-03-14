@@ -4,18 +4,24 @@ using UnityEngine;
 public class CharacterController2D : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
-    [SerializeField] private float _movementSpeed = 5f;
-    [SerializeField] private float _jumpForce = 10f;
+    public float _movementSpeed = 5f;
+    public float _jumpForce = 10f;
     private bool isRight = true;
     [SerializeField] LayerMask Ground;
     private float defaultGravityScale;
     [SerializeField] float jumpMultiplier = 2.5f;
     public Vector2 _movement { private get; set; }
     public float speedY { get => _rigidbody2D.linearVelocityY; }
+    
+    float initialVelJump;
+    [SerializeField] float rayLength = 1f;
+    
     private void Start()
     {
+        
         _rigidbody2D = GetComponent<Rigidbody2D>();
         defaultGravityScale = _rigidbody2D.gravityScale;
+        
     }
     public void SetMovement(Vector2 vec)
     {
@@ -49,7 +55,12 @@ public class CharacterController2D : MonoBehaviour
     }
     public bool isGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.4f, Ground);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, rayLength, Ground);
         return hit.collider != null;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * rayLength);
     }
 }

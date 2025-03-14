@@ -15,9 +15,10 @@ public class Enemy : MonoBehaviour
     private bool isAttacking = false;
     private Animator anim;
     [SerializeField] Transform hitPos;
-    [SerializeField]
-    [Range(0.1f,1f)]float hitRange = 0.1f;
-    [SerializeField] private EnemyType enemyType;
+    [SerializeField]float hitRange = 0.1f;
+    [SerializeField] private EnemyType enemyType = EnemyType.Swordsman;
+    [SerializeField] private GameObject arrowPrefab = null;
+    public EnemyType EnemyTypeObject { get { return enemyType; } }
 
     public float DetectionRange { get { return detectionRange; } }
     public float AttackRange { get { return attackRange; } }
@@ -38,7 +39,10 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         enemyStateMachine.StateUpdate();
-        anim.SetFloat("isWalking",Mathf.Abs(rb.linearVelocityX));
+        if(enemyType != EnemyType.Archer)
+        {
+            anim.SetFloat("isWalking", Mathf.Abs(rb.linearVelocityX));
+        }   
     }
     private void FixedUpdate()
     {
@@ -50,11 +54,13 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position+attackOffset, attackRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(hitPos.position, hitRange);
     }
     public void Attack()
     {
         isAttacking = true;
+
         anim.SetBool("isAttack", isAttacking);
         Debug.Log("Attacking");
     }
@@ -63,13 +69,22 @@ public class Enemy : MonoBehaviour
         isAttacking = false;
         anim.SetBool("isAttack", isAttacking);
     }
+    
     public void HitFrame()
     {
-        //switch()
         Collider2D col = Physics2D.OverlapCircle(hitPos.position, hitRange, playerLayer);
-        if (col != null)
+        if (col == null) return;
+        switch (enemyType)
         {
-            col.GetComponent<PlayerMain>().SwitchHurt();
+            case EnemyType.Normal:
+                col.GetComponent<PlayerMain>().SwitchHurt();
+                break;
+            case EnemyType.Archer:
+                Debug.Log("Archer Attack");
+                Instantiate(arrowPrefab, hitPos.position, hitPos.rotation);
+                break;
+
+            default:break;
         }
     }
 }

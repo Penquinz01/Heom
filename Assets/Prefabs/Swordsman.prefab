@@ -169,6 +169,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   jumpMultiplier: 2.5
+  rayLength: 0.4
 --- !u!114 &328237172857550404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,12 +182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec0283d69f0cbe418ac5b0af3e7314f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 0.87
+  attackRange: 1.06
   attackRate: 1.5
   detectionRange: 5
   attackOffset: {x: 0, y: 0, z: 0}
   hitPos: {fileID: 8561120270957295967}
   hitRange: 0.74
+  enemyType: 0
   playerLayer:
     serializedVersion: 2
     m_Bits: 64

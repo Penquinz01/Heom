@@ -17,7 +17,7 @@ public class PlayerInput : MonoBehaviour
         _input.Enable();
         _input.PlayerActions.Movement.performed += MovePerformed;
         _input.PlayerActions.Attack.performed += AttackPerformed;
-        _input.PlayerActions.Jump.performed += JumpPerformed;
+        _input.PlayerActions.Jump.started += JumpPerformed;
         _input.PlayerActions.Movement.canceled += MoveStopped;
     }
 
@@ -28,12 +28,12 @@ public class PlayerInput : MonoBehaviour
 
     private void JumpPerformed(InputAction.CallbackContext context)
     {
-        Attack?.Invoke();
+        Jump?.Invoke();
     }
 
     private void AttackPerformed(InputAction.CallbackContext context)
     {
-        Jump?.Invoke();
+        Attack?.Invoke();
     }
 
     private void MovePerformed(InputAction.CallbackContext context)

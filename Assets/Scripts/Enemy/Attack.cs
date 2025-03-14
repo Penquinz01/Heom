@@ -9,6 +9,7 @@ public class Attack : IEnemyStates
     float AttackTime;
     float nextAttack = 0;
     Vector3 offset;
+    CharacterController2D controller;
     public Attack(Enemy enemy, EnemyStateMAchine enemyStateMachine)
     {
         this.enemy = enemy;
@@ -16,6 +17,7 @@ public class Attack : IEnemyStates
         attackRange = enemy.AttackRange;
         AttackTime = enemy.AttackTime;
         offset = enemy.AttackOffset;
+        controller = enemy.GetComponent<CharacterController2D>();
 
     }
     public void Enter()
@@ -42,7 +44,12 @@ public class Attack : IEnemyStates
         }
         else
         {
-            if(Time.time > nextAttack)
+            Collider2D col = cols[0];
+            PlayerMain player = col.GetComponent<PlayerMain>();
+            if (player != null && enemy.EnemyTypeObject == EnemyType.Archer) { 
+                controller.SetMovement((player.transform.position -enemy.transform.position) );
+            }
+            if (Time.time > nextAttack)
             {
                 nextAttack = Time.time + AttackTime;
                 enemy.Attack();
