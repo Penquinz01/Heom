@@ -18,6 +18,12 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.Movement.performed += MovePerformed;
         _input.PlayerActions.Attack.performed += AttackPerformed;
         _input.PlayerActions.Jump.performed += JumpPerformed;
+        _input.PlayerActions.Movement.canceled += MoveStopped;
+    }
+
+    private void MoveStopped(InputAction.CallbackContext context)
+    {
+        Movement = Vector2.zero;
     }
 
     private void JumpPerformed(InputAction.CallbackContext context)
