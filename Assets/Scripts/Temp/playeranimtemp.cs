@@ -21,5 +21,11 @@ public class playeranimtemp : MonoBehaviour
         else {
             anim.SetBool("isAttack", false);
         }
+        if (Input.GetKeyDown(KeyCode.W)) {
+            anim.SetTrigger("isJump");
+        }
+        if (Input.GetKeyDown(KeyCode.H)) {
+            anim.SetTrigger("isHurt");
+        }
     }
 }
