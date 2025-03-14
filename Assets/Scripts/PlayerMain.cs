@@ -23,13 +23,18 @@ public class PlayerMain : MonoBehaviour
     }
     public void SwitchHurt()
     {
-
+        isHurt = !isHurt;
+        if (isHurt)
+        {
+            Time.timeScale = 0f;
+            StartCoroutine(HitFrame(hitStopTime));
+        }
     }
     IEnumerator HitFrame(float waitSecond)
     {
         isHurt = true;
-        Time.timeScale = 0f;
-        yield return new WaitForSeconds(waitSecond);
+        
+        yield return new WaitForSecondsRealtime(hitStopTime);
         Time.timeScale = 1f;
         isHurt = false;
     }
