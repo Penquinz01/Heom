@@ -47,4 +47,8 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
+    public void Attack()
+    {
+        Debug.Log("Attacking");
+    }
 }

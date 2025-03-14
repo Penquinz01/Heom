@@ -45,7 +45,7 @@ public class Attack : IEnemyStates
             if(Time.time > nextAttack)
             {
                 nextAttack = Time.time + AttackTime;
-                //Animation Logic
+                enemy.Attack();
             }
         }
     }

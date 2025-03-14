@@ -38,7 +38,7 @@ public class Chase : IEnemyStates
     {
         if (Physics2D.OverlapCircle(enemy.transform.position, attackRange, playerLayer))
         {
-            Debug.Log("To Attack");
+            characterController.SetMovement(Vector2.zero);
             enemyStateMachine.Transition(enemyStateMachine.attack);
             return;
         }

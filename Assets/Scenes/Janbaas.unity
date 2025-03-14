@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 539019905}
   - component: {fileID: 539019904}
   - component: {fileID: 539019903}
+  - component: {fileID: 539019909}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -281,13 +282,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec0283d69f0cbe418ac5b0af3e7314f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 0.83
-  attackRate: 1
+  attackRange: 0.87
+  attackRate: 2
   detectionRange: 5
-  attackOffset: {x: 0.47, y: -0.26, z: 0}
+  attackOffset: {x: 0, y: 0, z: 0}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &539019905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +378,7 @@ SpriteRenderer:
   m_SortingLayerID: -1851959573
   m_SortingLayer: 2
   m_SortingOrder: 5
-  m_Sprite: {fileID: 2486660915761704726, guid: 39b328bde9cd8414682e775172d2de34, type: 3}
+  m_Sprite: {fileID: 2907199814229097745, guid: 6b0eceb85a5cf7644946def2bdfa877a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -403,6 +404,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &539019909
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539019902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef849851535429a4d943c593970b69bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &833572764
 GameObject:
   m_ObjectHideFlags: 0
