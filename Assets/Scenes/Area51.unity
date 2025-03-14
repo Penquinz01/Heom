@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 1989444154}
   - component: {fileID: 1989444156}
   - component: {fileID: 1989444155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
