@@ -5,6 +5,7 @@ public class PlayerMain : MonoBehaviour
     CharacterController2D controller;
     PlayerInput input;
     Vector2 move;
+    private bool isHurt = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,5 +18,9 @@ public class PlayerMain : MonoBehaviour
     {
         move = input.Movement;
         controller.SetMovement(move);
+    }
+    public void SwitchHurt()
+    {
+
     }
 }
