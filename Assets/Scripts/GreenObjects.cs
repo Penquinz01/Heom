@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GreenObjects : MonoBehaviour,IColor
 {
-
+    SpriteRenderer spriteRenderer;
 
     public void Initialize()
     {
@@ -10,7 +10,8 @@ public class GreenObjects : MonoBehaviour,IColor
     }
     void Start()
     {
-        Initialize();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = GameManager.Instance.Green;
     }
 
 }

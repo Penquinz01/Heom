@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.InputSystem;
 
+
+public enum ColorSelected
+{
+    Red, Green, Blue
+}
 public class GameManager : MonoBehaviour
 {
     List<RedObjects> redObjects = new List<RedObjects>();
@@ -12,9 +17,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]Color red;
     [SerializeField]Color blue;
     [SerializeField]Color green;
+    public ColorSelected selected;
     public static GameManager Instance { get; private set; }
     private Player control;
     int switchOption= 0;
+
+    public Color Red { get => red;}
+    public Color Green { get => green;}
+    public Color Blue { get => blue; }
     private void Awake()
     {
         Instance = this;
@@ -26,15 +36,17 @@ public class GameManager : MonoBehaviour
     {
         control.Enable();
         control.Hue.Switch.started += OnSwitch;
+        selected = ColorSelected.Red;
+        SetRed(new InputAction.CallbackContext());
     }
 
     private void OnSwitch(InputAction.CallbackContext context)
     {
         switch (switchOption)
         {
-            case 0:SetRed(context); break;
-            case 1: SetGreen(context); break;
-            case 2: SetBlue(context); break;
+            case 0:SetRed(context); selected = ColorSelected.Red;SetRed(context); break;
+            case 1: SetGreen(context); selected = ColorSelected.Green; SetGreen(context); break;
+            case 2: SetBlue(context); selected = ColorSelected.Blue; SetBlue(context); break;
         }
         switchOption++;
         if (switchOption > 2)
@@ -60,7 +72,7 @@ public class GameManager : MonoBehaviour
                 item.gameObject.SetActive(true);
             }
         }
-        if (greenObjects.Count > 0)
+        if (redObjects.Count > 0)
         {
             foreach (var item in redObjects)
             {
@@ -88,7 +100,7 @@ public class GameManager : MonoBehaviour
                 item.gameObject.SetActive(false);
             }
         }
-        if (greenObjects.Count > 0)
+        if (redObjects.Count > 0)
         {
             foreach (var item in redObjects)
             {
@@ -115,7 +127,7 @@ public class GameManager : MonoBehaviour
                 item.gameObject.SetActive(true);
             }
         }
-        if (greenObjects.Count > 0)
+        if (redObjects.Count > 0)
         {
             foreach (var item in redObjects)
             {
