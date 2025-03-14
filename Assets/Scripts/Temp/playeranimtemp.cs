@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class playeranimtemp : MonoBehaviour
 {
-    public Animator anim;
+    private Animator anim;
 
     private void Start() {
         anim = GetComponent<Animator>();
