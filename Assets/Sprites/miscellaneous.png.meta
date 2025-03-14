@@ -253,6 +253,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1347,7 +1360,56 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      miscellaneous_0: 7162549494532722038
+      miscellaneous_1: -2042469080296811987
+      miscellaneous_10: -6845135112595290398
+      miscellaneous_11: 5884551373772157481
+      miscellaneous_12: 4638463798566976362
+      miscellaneous_13: -1085627579298301208
+      miscellaneous_14: 7138768331236183752
+      miscellaneous_15: -4525217458218856932
+      miscellaneous_16: 7466726346404713869
+      miscellaneous_17: -136889104871053466
+      miscellaneous_18: -7917483242671851453
+      miscellaneous_19: 2249875255055268082
+      miscellaneous_2: -6856104670046681102
+      miscellaneous_20: 3160392992617168301
+      miscellaneous_21: 3174015364378851250
+      miscellaneous_22: 1516700724077458497
+      miscellaneous_23: 3441215023120928934
+      miscellaneous_24: -1383766533255101866
+      miscellaneous_25: -8827446465376406282
+      miscellaneous_26: -4479084522048487361
+      miscellaneous_27: 3053589418701580115
+      miscellaneous_28: -5609033630646851202
+      miscellaneous_29: 3061393419293577542
+      miscellaneous_3: 3677766936465577911
+      miscellaneous_30: -8355159768292984590
+      miscellaneous_31: -2759902202230484075
+      miscellaneous_32: -905302374635091601
+      miscellaneous_33: -3545299136149732790
+      miscellaneous_34: -7684971498705735274
+      miscellaneous_35: -7703025095467065614
+      miscellaneous_36: -1193189880671826868
+      miscellaneous_37: -8694941671894139154
+      miscellaneous_38: -4254279437718707538
+      miscellaneous_39: 3643130619105752877
+      miscellaneous_4: -2945905464522314054
+      miscellaneous_40: 4596772775042386723
+      miscellaneous_41: 3096991658334147060
+      miscellaneous_42: -5528409731643157642
+      miscellaneous_43: 2081778558235067709
+      miscellaneous_44: -2224934777543924585
+      miscellaneous_45: 6093680225591303274
+      miscellaneous_46: -2995246977499206061
+      miscellaneous_47: -7502183253492489830
+      miscellaneous_48: 4421223503002191824
+      miscellaneous_5: -1559286267086368801
+      miscellaneous_6: 6797661688875225206
+      miscellaneous_7: 6487967984163570464
+      miscellaneous_8: 8332631704476352130
+      miscellaneous_9: 4939747856581782260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

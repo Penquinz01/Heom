@@ -250,6 +250,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1322,7 +1335,55 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      enemies_0: 2731795287329381114
+      enemies_1: 3229708652140166120
+      enemies_10: -8384590935982494654
+      enemies_11: -4253028335022237997
+      enemies_12: -6812798382714016367
+      enemies_13: 7153525974244860219
+      enemies_14: 414078030284958077
+      enemies_15: -7994963395263852509
+      enemies_16: 911881859052452035
+      enemies_17: 2486660915761704726
+      enemies_18: -1376865339905038310
+      enemies_19: -2653283651817642593
+      enemies_2: 876784968147787122
+      enemies_20: 4120149006412595196
+      enemies_21: -6271420699411309263
+      enemies_22: -5078133620036087085
+      enemies_23: 13176795997692230
+      enemies_24: 8548960543114135391
+      enemies_25: 4349874989898575965
+      enemies_26: -8813625427563929358
+      enemies_27: 8051249747175636869
+      enemies_28: 8237017158513173956
+      enemies_29: 3788001193901675320
+      enemies_3: 1961183383047197949
+      enemies_30: 1017871411792229582
+      enemies_31: -7143632009852538275
+      enemies_32: -6949527019116515464
+      enemies_33: -7373728255155398809
+      enemies_34: -4535217547422562818
+      enemies_35: 7842233440562819812
+      enemies_36: 8203917247392330234
+      enemies_37: -1646162936135731460
+      enemies_38: 262253260368052137
+      enemies_39: -5661289293352146724
+      enemies_4: -3351989875833439213
+      enemies_40: -574701310493481389
+      enemies_41: 3043105842737735301
+      enemies_42: -8137250916114564832
+      enemies_43: 6778329007797468826
+      enemies_44: -5571332060652782084
+      enemies_45: -6401660212284299933
+      enemies_46: -5635799371484771798
+      enemies_47: -8260159705139820125
+      enemies_5: -3029504926045522119
+      enemies_6: -2782341204894616949
+      enemies_7: 6230911579049521198
+      enemies_8: -8108438390446734492
+      enemies_9: -3231492579343523708
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
