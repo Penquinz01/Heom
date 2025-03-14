@@ -172,7 +172,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6133754210505114723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f71b65d799b9d4abf4977fa921439c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
+  _movementSpeed: 0
   _jumpForce: 10
   Ground:
     serializedVersion: 2
@@ -204,14 +204,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec0283d69f0cbe418ac5b0af3e7314f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1
-  attackRate: 1
-  detectionRange: 5
+  attackRange: 8
+  attackRate: 2
+  detectionRange: 8
   attackOffset: {x: 0, y: 0, z: 0}
   hitPos: {fileID: 8673407796832144349}
-  hitRange: 0.1
+  hitRange: 6.21
   enemyType: 2
-  arrowPrefab: {fileID: 0}
+  arrowPrefab: {fileID: 880843508307259518, guid: 84d328b01ae9be24ea1a5f3f34eee21a, type: 3}
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
