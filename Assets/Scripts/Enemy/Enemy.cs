@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]private float attackRange = 1f;
     [SerializeField] private float attackRate = 1f;
     [SerializeField] private float detectionRange = 5f;
+    [SerializeField] private Vector3 attackOffset = Vector2.zero;
 
     public float DetectionRange { get { return detectionRange; } }
     public float AttackRange { get { return attackRange; } }
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     public LayerMask PlayerLayer { get { return playerLayer; } }
     public float AttackTime { get { return attackRate; } }
+    public Vector3 AttackOffset { get { return attackOffset; } }
 
     private void Awake()
     {
@@ -41,6 +43,8 @@ public class Enemy : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(transform.position+attackOffset, attackRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }

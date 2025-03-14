@@ -6,14 +6,12 @@ public class Idle : IEnemyStates
     EnemyStateMAchine enemyStateMachine;
     float detectionRadius;
     LayerMask playerLayer;
-    float attackRange;
     public Idle(Enemy enemy,EnemyStateMAchine enemyStateMachine)
     {
         this.enemy = enemy;
         this.enemyStateMachine = enemyStateMachine;
         detectionRadius = enemy.DetectionRange;
         playerLayer = enemy.PlayerLayer;
-        attackRange = enemy.AttackRange;
     }
     public void Enter()
     {
