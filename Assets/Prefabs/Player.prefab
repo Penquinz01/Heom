@@ -64,7 +64,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.6, y: 2.6, z: 2.6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 284748960554431077}
@@ -251,11 +251,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f71b65d799b9d4abf4977fa921439c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
+  _movementSpeed: 10
   _jumpForce: 10
   Ground:
     serializedVersion: 2
     m_Bits: 128
   jumpMultiplier: 2.5
   StartedJump: 0
-  rayLength: 1.06
+  rayLength: 1.8
+  CoyoteTime: 0.2
+  sphereRadius: 0.3
