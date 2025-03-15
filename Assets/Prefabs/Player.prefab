@@ -200,6 +200,7 @@ MonoBehaviour:
   attackPoint: {fileID: 284748960554431077}
   attackRange: 0.89
   DashForce: 1.2
+  health: 3
 --- !u!114 &4626602406512941648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,9 +236,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &4431301216108380255
 MonoBehaviour:
