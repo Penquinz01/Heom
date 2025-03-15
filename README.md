@@ -12,8 +12,13 @@ Target Audience: Players who enjoy challenging puzzles and dynamic platforming e
 Development Team:
 
 Coding and Mechanics: Janbaas
+
 Level Design: Anthony
+
+
 Art: Hani
+
+
 2. Gameplay Mechanics
 
 Core Mechanic: Pressing the Shift key changes the background color, affecting the visibility and interaction of objects and enemies.
