@@ -13,10 +13,13 @@ public class CharacterController2D : MonoBehaviour
     public bool StartedJump=false;
     public Vector2 _movement { private get; set; }
     public float speedY { get => _rigidbody2D.linearVelocityY; }
+    bool lastGround = false;
     
     float initialVelJump;
     [SerializeField] float rayLength = 1f;
-    
+    [SerializeField] float CoyoteTime = 0.2f;
+    float lastGroundTime;
+
     private void Start()
     {
         
@@ -34,6 +37,15 @@ public class CharacterController2D : MonoBehaviour
     }
     private void Update()
     {
+        if (!isGrounded() && lastGround)
+        {
+            lastGround = true;
+            lastGroundTime = Time.time;
+        }
+        else if (isGrounded())
+        {
+            lastGround = true;
+        }
         _rigidbody2D.gravityScale = _rigidbody2D.linearVelocity.y < 0 ? defaultGravityScale * jumpMultiplier : defaultGravityScale;
     }
 
@@ -49,7 +61,7 @@ public class CharacterController2D : MonoBehaviour
     }
     public void Jump()
     {
-        if (isGrounded())
+        if (isGrounded()||(!isGrounded() && Time.time < lastGroundTime + CoyoteTime))
         {
             StartedJump = true;
             _rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
