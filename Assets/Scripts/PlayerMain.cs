@@ -68,10 +68,10 @@ public class PlayerMain : MonoBehaviour
     }
     public void SwitchHurt()
     {
-        Debug.Log("Hurt");
         isHurt = !isHurt;
         if (isHurt)
         {
+            GameManager.Instance.CameraShake();
             Time.timeScale = 0f;
             StartCoroutine(HitFrame(hitStopTime));
         }
@@ -79,7 +79,7 @@ public class PlayerMain : MonoBehaviour
     IEnumerator HitFrame(float waitSecond)
     {
         isHurt = true;
-        anim.SetTrigger("isHurt");
+        anim.SetTrigger("isHurt");        
         yield return new WaitForSecondsRealtime(hitStopTime);
         Time.timeScale = 1f;
         isHurt = false;
