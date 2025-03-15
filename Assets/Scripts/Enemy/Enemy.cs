@@ -140,6 +140,7 @@ public class Enemy : MonoBehaviour
 
             instance.GetComponent<Rigidbody2D>().AddForce(dir * force);
             instance.transform.localScale = Vector3.one * size;
+            Destroy(instance, 3f);
         }
         //hani code end
 
