@@ -120,6 +120,7 @@ public class Enemy : MonoBehaviour
              GameObject header = Instantiate(head, transform.position + Vector3.up, Quaternion.identity);
              header.GetComponent<SpriteRenderer>().color = GameManager.Instance.GetColor(colorSelected);
         }
+        GameManager.Instance.CameraShake();
         Instantiate(bloodEffect, transform.position, Quaternion.identity);
         IColor color = gameObject.GetComponent<IColor>();
         color.Remove();
