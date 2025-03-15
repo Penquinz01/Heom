@@ -78,4 +78,9 @@ o	Left Mouse Button (LMB): Perform Attack
 o	Left Shift: Change Background Color
 o	Q: Change Background Color
 
+Lore:
+Heom is the Loyal Knight of Greek Godess of Rainbow Iris.
+Being her knight he has the ability to Control colors.
+He has been improsoned by the one and only Erebus the personification of drakness itself
+The game is about him escaping his castle.
 
