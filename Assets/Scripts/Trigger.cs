@@ -15,5 +15,6 @@ public class Trigger : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         GameManager.Instance.Opengates(id);
+        Destroy(gameObject);
     }
 }
