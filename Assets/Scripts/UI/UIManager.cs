@@ -19,4 +19,8 @@ public class UIManager : MonoBehaviour
     {
         healthText.text = hp.ToString();
     }
+    public void ExitApp()
+    {
+        Application.Quit(); 
+    }
 }
