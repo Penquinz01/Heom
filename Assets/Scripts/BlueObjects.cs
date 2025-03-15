@@ -9,6 +9,11 @@ public class BlueObjects : MonoBehaviour,IColor
         GameManager.Instance.RegisterBlue(this);
     }
 
+    public void Remove()
+    {
+        GameManager.Instance.RemoveBlue(this);
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

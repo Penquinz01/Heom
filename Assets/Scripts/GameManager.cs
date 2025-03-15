@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 using UnityEngine.InputSystem;
+using Unity.Cinemachine;
 
 
 public enum ColorSelected
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]Color blue;
     [SerializeField]Color green;
     public ColorSelected selected;
+    CinemachineImpulseSource impulseSource;
     public static GameManager Instance { get; private set; }
     private Player control;
     int switchOption= 0;
@@ -27,8 +29,11 @@ public class GameManager : MonoBehaviour
     public Color Blue { get => blue; }
     private void Awake()
     {
+        if (Instance != null) Destroy(this);
         Instance = this;
         control = new Player();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
+        DontDestroyOnLoad(this);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -153,5 +158,34 @@ public class GameManager : MonoBehaviour
     public  void RegisterBlue(BlueObjects blue)
     {
         blueObjects.Add(blue);
+    }
+    public void RemoveGreen(GreenObjects green)
+    {
+        greenObjects.Remove(green);
+    }
+    public void RemoveRed(RedObjects red)
+    {
+        redObjects.Remove(red);
+    }
+    public void RemoveBlue(BlueObjects blue)
+    {
+        blueObjects.Remove(blue);
+    }
+    public Color GetColor(ColorSelected color) {
+        switch (color)
+        {
+            case ColorSelected.Red:
+                return red;
+            case ColorSelected.Green:
+                return green;
+            case ColorSelected.Blue:
+                return blue;
+            default:
+                return Color.white;
+        }
+    }
+    public void CameraShake()
+    {
+        impulseSource.GenerateImpulse();
     }
 }
