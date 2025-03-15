@@ -91,3 +91,8 @@ Being her knight he has the ability to Control colors.
 He has been improsoned by the one and only Erebus the personification of drakness itself
 The game is about him escaping his castle.
 
+How to Open the Game
+Open Heom Build Folder
+open Heom.exe
+Enjoy
+
