@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: sphereRadius
       value: 0.44
       objectReference: {fileID: 0}
+    - target: {fileID: 4431301216108380255, guid: 34fa010c64d115447845df10e5b03281, type: 3}
+      propertyPath: _movementSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5723769826621494758, guid: 34fa010c64d115447845df10e5b03281, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4523,8 +4527,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 328237172857550404, guid: 7be7738f39ee3944cbcfa6ecfe5d847c, type: 3}
+      propertyPath: enemyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 328237172857550404, guid: 7be7738f39ee3944cbcfa6ecfe5d847c, type: 3}
       propertyPath: colorSelected
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 664459612544706366, guid: 7be7738f39ee3944cbcfa6ecfe5d847c, type: 3}
+      propertyPath: _movementSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6298619109239001998, guid: 7be7738f39ee3944cbcfa6ecfe5d847c, type: 3}
       propertyPath: m_LocalPosition.x
