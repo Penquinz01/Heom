@@ -171,6 +171,7 @@ MonoBehaviour:
   jumpMultiplier: 2.5
   StartedJump: 0
   rayLength: 0.4
+  CoyoteTime: 0.2
 --- !u!114 &328237172857550404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,10 +190,11 @@ MonoBehaviour:
   attackOffset: {x: 0, y: 0, z: 0}
   hitPos: {fileID: 8561120270957295967}
   hitRange: 0.74
-  enemyType: 1
+  enemyType: 0
   arrowPrefab: {fileID: 880843508307259518, guid: 84d328b01ae9be24ea1a5f3f34eee21a, type: 3}
   bloodEffect: {fileID: 2340021762304761565, guid: 24cb46750ea484a4caade9be6679d52a, type: 3}
   head: {fileID: 8549374363072101074, guid: d8820cb400f8e6f4aaca027932e26adb, type: 3}
+  colorSelected: 0
   playerLayer:
     serializedVersion: 2
     m_Bits: 64

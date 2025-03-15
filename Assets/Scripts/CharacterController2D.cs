@@ -19,6 +19,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] float rayLength = 1f;
     [SerializeField] float CoyoteTime = 0.2f;
     float lastGroundTime;
+    [SerializeField]float sphereRadius = 0.3f;
 
     private void Start()
     {
@@ -69,12 +70,12 @@ public class CharacterController2D : MonoBehaviour
     }
     public bool isGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, rayLength, Ground);
-        return hit.collider != null;
+        return Physics2D.CircleCast(transform.position, sphereRadius, Vector2.down, rayLength, Ground);
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * rayLength);
+        Gizmos.DrawWireSphere(transform.position + Vector3.down * rayLength, sphereRadius);
     }
 }

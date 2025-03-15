@@ -15,9 +15,11 @@ public class PlayerMain : MonoBehaviour
     [SerializeField]Transform attackPoint;
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] float DashForce = 12f;
+    private int health = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        health = 3;
         anim = GetComponent<Animator>();
         input = GetComponent<PlayerInput>();
         controller = GetComponent<CharacterController2D>();
@@ -74,6 +76,11 @@ public class PlayerMain : MonoBehaviour
             GameManager.Instance.CameraShake();
             Time.timeScale = 0f;
             StartCoroutine(HitFrame(hitStopTime));
+            health--;
+            if (health <= 0)
+            {
+                Die();
+            }
         }
     }
     IEnumerator HitFrame(float waitSecond)
@@ -87,5 +94,16 @@ public class PlayerMain : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    void Die()
+    {
+        GameManager.Instance.CameraShake();
+        StartCoroutine(Death());
+    }
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(1.5f);
+        input.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

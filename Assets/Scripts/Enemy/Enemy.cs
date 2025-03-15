@@ -116,7 +116,7 @@ public class Enemy : MonoBehaviour
     }
     public void Die()
     {
-        if (enemyType == EnemyType.Swordsman) { 
+        if (enemyType == EnemyType.Normal) { 
              GameObject header = Instantiate(head, transform.position + Vector3.up, Quaternion.identity);
              header.GetComponent<SpriteRenderer>().color = GameManager.Instance.GetColor(colorSelected);
         }
