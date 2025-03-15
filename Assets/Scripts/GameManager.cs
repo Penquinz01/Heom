@@ -48,16 +48,17 @@ public class GameManager : MonoBehaviour
     private void OnSwitch(InputAction.CallbackContext context)
     {
         switchOption++;
+        if (switchOption > 2)
+        {
+            switchOption = 0;
+        }
         switch (switchOption)
         {
             case 0:SetRed(context); selected = ColorSelected.Red;SetRed(context); break;
             case 1: SetGreen(context); selected = ColorSelected.Green; SetGreen(context); break;
             case 2: SetBlue(context); selected = ColorSelected.Blue; SetBlue(context); break;
         }
-        if (switchOption > 2)
-        {
-            switchOption = 0;
-        }
+        
     }
 
     private void SetBlue(InputAction.CallbackContext context)
