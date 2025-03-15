@@ -193,6 +193,8 @@ MonoBehaviour:
   jumpMultiplier: 2.5
   StartedJump: 0
   rayLength: 1
+  CoyoteTime: 0.2
+  sphereRadius: 0.3
 --- !u!114 &1402857136654776746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,9 +217,16 @@ MonoBehaviour:
   arrowPrefab: {fileID: 880843508307259518, guid: 84d328b01ae9be24ea1a5f3f34eee21a, type: 3}
   bloodEffect: {fileID: 2340021762304761565, guid: 24cb46750ea484a4caade9be6679d52a, type: 3}
   head: {fileID: 0}
+  colorSelected: 0
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  bloodCount: 0
+  minSize: 0
+  maxSize: 0
+  minForce: 0
+  maxForce: 0
+  bloodParticle: {fileID: 7447291726896348803, guid: 4046cdcbc603c4247a9616c925e8faec, type: 3}
 --- !u!70 &6804026494503598844
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

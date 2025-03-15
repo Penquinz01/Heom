@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.InputSystem;
 using Unity.Cinemachine;
+using UnityEngine.SceneManagement;
 
 
 public enum ColorSelected
@@ -35,12 +36,13 @@ public class GameManager : MonoBehaviour
         control = new Player();
         impulseSource = GetComponent<CinemachineImpulseSource>();
         DontDestroyOnLoad(this);
+        control.Enable();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        control.Enable();
+        
         control.Hue.Switch.started += OnSwitch;
         selected = ColorSelected.Red;
         SetRed(new InputAction.CallbackContext());
@@ -193,5 +195,10 @@ public class GameManager : MonoBehaviour
     public void CameraShake()
     {
         impulseSource.GenerateImpulse();
+    }
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SetRed(new InputAction.CallbackContext());
     }
 }

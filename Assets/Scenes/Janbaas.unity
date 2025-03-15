@@ -4528,11 +4528,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 328237172857550404, guid: 7be7738f39ee3944cbcfa6ecfe5d847c, type: 3}
       propertyPath: enemyType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 328237172857550404, guid: 7be7738f39ee3944cbcfa6ecfe5d847c, type: 3}
       propertyPath: colorSelected
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 664459612544706366, guid: 7be7738f39ee3944cbcfa6ecfe5d847c, type: 3}
       propertyPath: _movementSpeed
