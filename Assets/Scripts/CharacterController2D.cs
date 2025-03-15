@@ -40,7 +40,7 @@ public class CharacterController2D : MonoBehaviour
     {
         if (!isGrounded() && lastGround)
         {
-            lastGround = true;
+            lastGround = false;
             lastGroundTime = Time.time;
         }
         else if (isGrounded())
