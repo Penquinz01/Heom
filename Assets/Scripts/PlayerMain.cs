@@ -15,7 +15,7 @@ public class PlayerMain : MonoBehaviour
     [SerializeField]Transform attackPoint;
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] float DashForce = 12f;
-    private int health = 3;
+    [SerializeField]private int health = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -96,7 +96,7 @@ public class PlayerMain : MonoBehaviour
     {
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-    void Die()
+    public void Die()
     {
         GameManager.Instance.CameraShake();
         StartCoroutine(Death());

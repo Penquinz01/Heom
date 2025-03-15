@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
         control = new Player();
         impulseSource = GetComponent<CinemachineImpulseSource>();
-        DontDestroyOnLoad(this);
         control.Enable();
     }
 

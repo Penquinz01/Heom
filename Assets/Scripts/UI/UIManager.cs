@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     {
         if (Instance != null) Destroy(this);
         Instance = this;
-        DontDestroyOnLoad(this);
     }
     void Start()
     {
