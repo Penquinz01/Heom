@@ -12,6 +12,10 @@ public class PlayButton : MonoBehaviour
     private void Start() {
         sr = GetComponent<SpriteRenderer>();
         sr.color = init;
+        AudioManager audio = FindFirstObjectByType<AudioManager>();
+        if (audio != null) {
+            audio.Play("Theme");
+        }
     }
     private void OnMouseOver() {
         sr.color = hover;

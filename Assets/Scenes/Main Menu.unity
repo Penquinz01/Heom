@@ -152,56 +152,65 @@ MonoBehaviour:
   sounds:
   - name: Player Attack
     clip: {fileID: 8300000, guid: d497999ee5d648f4aa28416761c3c74d, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Arrow
     clip: {fileID: 8300000, guid: 85cac8b7d63efe54484dab797ad926dc, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Jump
-    clip: {fileID: 8300000, guid: 6b10dad03ce523e46b110e68ca5b9ce8, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: c47725b20eb12b7448c5323b73a72362, type: 3}
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Enemy Damage
     clip: {fileID: 8300000, guid: 99b85298e4095a94393c64b17b8e4b1c, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Kill
     clip: {fileID: 8300000, guid: faf7716da194b6141b029418bd44fe79, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Death
     clip: {fileID: 8300000, guid: baca1d1b2c842944ab74a84d0d394642, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: 8fbc8208151f0a84eaf589f1abcab37d, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
 --- !u!4 &38956711
@@ -253,7 +262,7 @@ MonoBehaviour:
   init: {r: 1, g: 1, b: 1, a: 0.09411765}
   hover: {r: 1, g: 1, b: 1, a: 0.5019608}
   pressed: {r: 1, g: 1, b: 1, a: 1}
-  scene: Area51
+  scene: Tutorial
 --- !u!61 &775502691
 BoxCollider2D:
   m_ObjectHideFlags: 0

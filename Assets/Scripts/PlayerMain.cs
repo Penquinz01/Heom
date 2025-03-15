@@ -33,6 +33,10 @@ public class PlayerMain : MonoBehaviour
     {
         rb.AddForce(transform.right * DashForce, ForceMode2D.Impulse);
         anim.SetBool("isAttack",true);
+        if (AudioManager.instance != null) {
+            Debug.Log("attack audio");
+            AudioManager.instance.Play("Player Attack");
+        }
     }
     public void EndAttack()
     {
@@ -47,12 +51,21 @@ public class PlayerMain : MonoBehaviour
             if (enemy != null)
             {
                 enemy.Die();
+                if (AudioManager.instance != null) {
+                    AudioManager.instance.Play("Kill");
+                }
+                if (AudioManager.instance != null) {
+                    AudioManager.instance.Play("Death");
+                }
             }
         }
     }
     private void StartJump()
     {
         controller.Jump();
+        if (AudioManager.instance != null) {
+            AudioManager.instance.Play("Jump");
+        }
     }
 
     // Update is called once per frame

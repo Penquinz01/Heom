@@ -4,8 +4,7 @@ using UnityEngine;
 public class ObjectSelector : MonoBehaviour
 {
     [SerializeField] ColorSelected colorSelected = ColorSelected.Red;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         switch (colorSelected)
         {
@@ -27,8 +26,13 @@ public class ObjectSelector : MonoBehaviour
             default:
                 break;
         }
+        
+    }
+    private void Start()
+    {
         IColor color = gameObject.GetComponent<IColor>();
         color.Initialize();
+        GameManager.Instance.SetRed();
     }
 }
 

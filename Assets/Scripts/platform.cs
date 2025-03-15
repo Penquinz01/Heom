@@ -9,21 +9,19 @@ public class platform : MonoBehaviour
     bool up = true;
     void Start()
     {
-        
+        rb.linearVelocityX = speed;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        up = transform.position.y < y1 ;
-        if (up)
+        if (transform.position.y < y1)
         {
-            Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, y1), speed);
+            rb.linearVelocityY = 0f;
+            rb.linearVelocityY = -speed;
         }
-        else
+        if (transform.position.y < y2)
         {
-            Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, y2), speed);
+            rb.linearVelocityX = 0;
+            rb.linearVelocityX = speed;
         }
-
     }
-}
