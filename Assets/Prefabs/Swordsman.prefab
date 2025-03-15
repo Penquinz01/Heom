@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8513984905621303812}
   - component: {fileID: 6335445709627680865}
   m_Layer: 0
-  m_Name: SwordsMan
+  m_Name: Swordsman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f71b65d799b9d4abf4977fa921439c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 3
+  _movementSpeed: 5
   _jumpForce: 10
   Ground:
     serializedVersion: 2
@@ -172,6 +172,7 @@ MonoBehaviour:
   StartedJump: 0
   rayLength: 0.4
   CoyoteTime: 0.2
+  sphereRadius: 0.3
 --- !u!114 &328237172857550404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +199,12 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  bloodCount: 100
+  minSize: 0.1
+  maxSize: 0.2
+  minForce: 50
+  maxForce: 100
+  bloodParticle: {fileID: 7447291726896348803, guid: 4046cdcbc603c4247a9616c925e8faec, type: 3}
 --- !u!70 &8513984905621303812
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class SwordsManHead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (initTime + 2 < Time.time)
+        if (initTime + 10 < Time.time)
         {
             Destroy(gameObject);
         }

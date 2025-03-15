@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     EnemyStateMAchine enemyStateMachine;
     CharacterController2D controller;
     Rigidbody2D rb;
-    [SerializeField]private float attackRange = 1f;
+    [SerializeField] private float attackRange = 1f;
     [SerializeField] private float attackRate = 1f;
     [SerializeField] private float detectionRange = 5f;
     [SerializeField] private Vector3 attackOffset = Vector2.zero;
@@ -30,6 +30,10 @@ public class Enemy : MonoBehaviour
     public LayerMask PlayerLayer { get { return playerLayer; } }
     public float AttackTime { get { return attackRate; } }
     public Vector3 AttackOffset { get { return attackOffset; } }
+
+    public int bloodCount;
+    public float minSize, maxSize, minForce, maxForce;
+    public GameObject bloodParticle;
 
     private void Awake()
     {
@@ -124,6 +128,21 @@ public class Enemy : MonoBehaviour
         Instantiate(bloodEffect, transform.position, Quaternion.identity);
         IColor color = gameObject.GetComponent<IColor>();
         color.Remove();
+
+        //hani code start
+        for (int i = 0; i < bloodCount; i++) {
+            float z = Random.Range(0f, Mathf.PI);
+            float force = Random.Range(minForce, maxForce);
+            float size = Random.Range(minSize, maxSize);
+
+            Vector2 dir = new Vector2(Mathf.Cos(z), Mathf.Sin(z));
+            var instance = Instantiate(bloodParticle, transform.position - (Vector3.forward), transform.rotation);
+
+            instance.GetComponent<Rigidbody2D>().AddForce(dir * force);
+            instance.transform.localScale = Vector3.one * size;
+        }
+        //hani code end
+
         Destroy(gameObject);
     }
 }
