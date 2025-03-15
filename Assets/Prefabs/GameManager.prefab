@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0034e02bdd78b5e4eb2d2b68031a8550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red: {r: 0.9811321, g: 0.45087665, b: 0.41034758, a: 1}
-  blue: {r: 0.45597476, g: 1, b: 0.9765322, a: 1}
-  green: {r: 0.4564494, g: 0.98742133, b: 0.4918475, a: 1}
-  selected: 0
+  red: {r: 0.627451, g: 0.29803923, b: 0.34901962, a: 1}
+  blue: {r: 0.4930406, g: 0.42575443, b: 0.64779866, a: 1}
+  green: {r: 0.47450984, g: 0.5529412, b: 0.5921569, a: 1}
+  selected: 2
 --- !u!114 &8460185023776809223
 MonoBehaviour:
   m_ObjectHideFlags: 0
