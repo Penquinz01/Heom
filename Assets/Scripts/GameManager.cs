@@ -36,15 +36,14 @@ public class GameManager : MonoBehaviour
         control = new Player();
         impulseSource = GetComponent<CinemachineImpulseSource>();
         control.Enable();
+        control.Hue.Switch.started += OnSwitch;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        control.Hue.Switch.started += OnSwitch;
         selected = ColorSelected.Red;
-        SetRed(new InputAction.CallbackContext());
+        //SetRed();
     }
     public void Opengates(int id)
     {
@@ -60,14 +59,14 @@ public class GameManager : MonoBehaviour
         }
         switch (switchOption)
         {
-            case 0:SetRed(context); selected = ColorSelected.Red;SetRed(context); break;
-            case 1: SetGreen(context); selected = ColorSelected.Green; SetGreen(context); break;
-            case 2: SetBlue(context); selected = ColorSelected.Blue; SetBlue(context); break;
+            case 0:SetRed(); selected = ColorSelected.Red; break;
+            case 1: SetGreen(); selected = ColorSelected.Green;  break;
+            case 2: SetBlue(); selected = ColorSelected.Blue;  break;
         }
         
     }
 
-    private void SetBlue(InputAction.CallbackContext context)
+    private void SetBlue()
     {
         Camera.main.backgroundColor = blue;
         if (blueObjects.Count > 0)
@@ -95,7 +94,7 @@ public class GameManager : MonoBehaviour
 
        
 
-    private void SetGreen(InputAction.CallbackContext context)
+    private void SetGreen()
     {
         Camera.main.backgroundColor = green;
         if (blueObjects.Count > 0)
@@ -122,7 +121,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void SetRed(InputAction.CallbackContext context)
+    public void SetRed()
     {
         Camera.main.backgroundColor = red;
         if (blueObjects.Count > 0)
@@ -198,6 +197,5 @@ public class GameManager : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        SetRed(new InputAction.CallbackContext());
     }
 }

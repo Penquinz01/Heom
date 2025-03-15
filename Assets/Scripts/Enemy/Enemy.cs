@@ -60,11 +60,13 @@ public class Enemy : MonoBehaviour
                 }
         }
         
+
     }
     private void Start()
     {
         IColor color = gameObject.GetComponent<IColor>();
         color.Initialize();
+        GameManager.Instance.SetRed();
     }
     // Update is called once per frame
     void Update()
