@@ -79,7 +79,7 @@ public class PlayerMain : MonoBehaviour
     IEnumerator HitFrame(float waitSecond)
     {
         isHurt = true;
-        
+        anim.SetTrigger("isHurt");
         yield return new WaitForSecondsRealtime(hitStopTime);
         Time.timeScale = 1f;
         isHurt = false;

@@ -18,6 +18,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]float hitRange = 0.1f;
     [SerializeField] private EnemyType enemyType = EnemyType.Swordsman;
     [SerializeField] private GameObject arrowPrefab = null;
+    [SerializeField] private GameObject bloodEffect = null;
+    [SerializeField] private GameObject head;
+    [SerializeField] ColorSelected colorSelected = ColorSelected.Red;
     public EnemyType EnemyTypeObject { get { return enemyType; } }
 
     public float DetectionRange { get { return detectionRange; } }
@@ -33,7 +36,31 @@ public class Enemy : MonoBehaviour
         enemyStateMachine = new EnemyStateMAchine(this);
         controller = GetComponent<CharacterController2D>();
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();    
+        anim = GetComponent<Animator>();
+        switch (colorSelected)
+        {
+            case ColorSelected.Red:
+                {
+                    if (gameObject.GetComponent<RedObjects>() == null) gameObject.AddComponent<RedObjects>();
+                    break;
+                }
+            case ColorSelected.Green:
+                {
+                    if (gameObject.GetComponent<GreenObjects>() == null) gameObject.AddComponent<GreenObjects>();
+                    break;
+                }
+            case ColorSelected.Blue:
+                {
+                    if (gameObject.GetComponent<BlueObjects>() == null) gameObject.AddComponent<BlueObjects>();
+                    break;
+                }
+        }
+        
+    }
+    private void Start()
+    {
+        IColor color = gameObject.GetComponent<IColor>();
+        color.Initialize();
     }
     // Update is called once per frame
     void Update()
@@ -89,6 +116,13 @@ public class Enemy : MonoBehaviour
     }
     public void Die()
     {
+        if (enemyType == EnemyType.Swordsman) { 
+             GameObject header = Instantiate(head, transform.position + Vector3.up, Quaternion.identity);
+             header.GetComponent<SpriteRenderer>().color = GameManager.Instance.GetColor(colorSelected);
+        }
+        Instantiate(bloodEffect, transform.position, Quaternion.identity);
+        IColor color = gameObject.GetComponent<IColor>();
+        color.Remove();
         Destroy(gameObject);
     }
 }

@@ -165,6 +165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitStopTime: 0.3
+  attackPoint: {fileID: 0}
+  attackRange: 0.5
+  DashForce: 1.2
 --- !u!114 &4626602406512941648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +196,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 94b451cec7b2d344084916d184c7b9e3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -222,4 +225,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   jumpMultiplier: 2.5
+  StartedJump: 0
   rayLength: 1

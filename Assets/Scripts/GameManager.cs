@@ -154,4 +154,29 @@ public class GameManager : MonoBehaviour
     {
         blueObjects.Add(blue);
     }
+    public void RemoveGreen(GreenObjects green)
+    {
+        greenObjects.Remove(green);
+    }
+    public void RemoveRed(RedObjects red)
+    {
+        redObjects.Remove(red);
+    }
+    public void RemoveBlue(BlueObjects blue)
+    {
+        blueObjects.Remove(blue);
+    }
+    public Color GetColor(ColorSelected color) {
+        switch (color)
+        {
+            case ColorSelected.Red:
+                return red;
+            case ColorSelected.Green:
+                return green;
+            case ColorSelected.Blue:
+                return blue;
+            default:
+                return Color.white;
+        }
+    }
 }

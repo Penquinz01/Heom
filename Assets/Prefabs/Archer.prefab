@@ -191,6 +191,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   jumpMultiplier: 2.5
+  StartedJump: 0
   rayLength: 1
 --- !u!114 &1402857136654776746
 MonoBehaviour:
@@ -212,6 +213,8 @@ MonoBehaviour:
   hitRange: 6.21
   enemyType: 2
   arrowPrefab: {fileID: 880843508307259518, guid: 84d328b01ae9be24ea1a5f3f34eee21a, type: 3}
+  bloodEffect: {fileID: 2340021762304761565, guid: 24cb46750ea484a4caade9be6679d52a, type: 3}
+  head: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 64

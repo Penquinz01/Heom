@@ -13,5 +13,8 @@ public class GreenObjects : MonoBehaviour,IColor
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = GameManager.Instance.Green;
     }
-
+    public void Remove()
+    {
+        GameManager.Instance.RemoveGreen(this);
+    }
 }
