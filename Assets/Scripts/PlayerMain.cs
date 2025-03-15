@@ -77,6 +77,7 @@ public class PlayerMain : MonoBehaviour
             Time.timeScale = 0f;
             StartCoroutine(HitFrame(hitStopTime));
             health--;
+            UIManager.Instance.UpdateText(health);
             if (health <= 0)
             {
                 Die();
@@ -102,8 +103,10 @@ public class PlayerMain : MonoBehaviour
     }
     IEnumerator Death()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         input.gameObject.SetActive(false);
-        Destroy(gameObject);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        GameManager.Instance.ReloadScene();
+
     }
 }
