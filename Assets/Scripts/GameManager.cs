@@ -29,9 +29,11 @@ public class GameManager : MonoBehaviour
     public Color Blue { get => blue; }
     private void Awake()
     {
+        if (Instance != null) Destroy(this);
         Instance = this;
         control = new Player();
         impulseSource = GetComponent<CinemachineImpulseSource>();
+        DontDestroyOnLoad(this);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
