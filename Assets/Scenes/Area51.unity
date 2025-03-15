@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 570813883}
   - component: {fileID: 570813882}
   - component: {fileID: 570813881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4546,7 +4546,7 @@ GameObject:
   - component: {fileID: 1725452097}
   - component: {fileID: 1725452096}
   - component: {fileID: 1725452095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
