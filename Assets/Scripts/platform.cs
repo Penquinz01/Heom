@@ -1,23 +1,36 @@
 using UnityEngine;
 
-public class platform : MonoBehaviour {
-    [SerializeField] private float y1;
-    [SerializeField] private float y2;
+public class platform : MonoBehaviour
+{
+    [SerializeField] private Transform up;
+    [SerializeField] private Transform down;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed;
-    bool up = true;
-    void Start() {
-        rb.linearVelocityX = speed;
+    private int direction = 1;
+
+    void Start()
+    {
+        // Ensure the platform starts at the 'down' position
+        transform.position = down.position;
     }
 
-    void Update() {
-        if (transform.position.y < y1) {
-            rb.linearVelocityY = 0f;
-            rb.linearVelocityY = -speed;
-        }
-        if (transform.position.y < y2) {
-            rb.linearVelocityX = 0;
-            rb.linearVelocityX = speed;
+    void Update()
+    {
+        MovePlatform();
+    }
+
+    private void MovePlatform()
+    {
+        // Move the platform towards the target position
+        Vector2 targetPosition = direction == 1 ? up.position : down.position;
+        Vector2 newPosition = Vector2.MoveTowards(rb.position, targetPosition, speed * Time.deltaTime);
+        rb.MovePosition(newPosition);
+
+        // Check if the platform has reached the target position
+        if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
+        {
+            // Reverse the direction
+            direction *= -1;
         }
     }
 }
