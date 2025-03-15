@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 324334740}
   - component: {fileID: 324334739}
+  - component: {fileID: 324334741}
   m_Layer: 0
   m_Name: Spike (1)
   m_TagString: Untagged
@@ -197,6 +198,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324334741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324334738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2ce746294965540a832528bd5b7318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &463125669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271,6 +284,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6752631857035664554, guid: 8a05da188edbdad4abcae6bcc589b5ef, type: 3}
   m_PrefabInstance: {fileID: 1840538683}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &620702739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 620702741}
+  - component: {fileID: 620702740}
+  m_Layer: 0
+  m_Name: LoadNextScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &620702740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620702739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03fae866fa2cbe4bb4e6012f323acc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1028958496}
+--- !u!4 &620702741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620702739}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.533563, y: -3.0936108, z: -0.19287285}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &800888609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -429,6 +487,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34fa010c64d115447845df10e5b03281, type: 3}
+--- !u!1 &1028958496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7194977293578053903, guid: 7be7738f39ee3944cbcfa6ecfe5d847c, type: 3}
+  m_PrefabInstance: {fileID: 463125669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1136288400
 GameObject:
   m_ObjectHideFlags: 0
@@ -5147,6 +5210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1984825368}
   - component: {fileID: 1984825367}
+  - component: {fileID: 1984825369}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -5215,6 +5279,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1984825369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984825366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2ce746294965540a832528bd5b7318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2027240636
 GameObject:
   m_ObjectHideFlags: 0
@@ -5261,3 +5337,4 @@ SceneRoots:
   - {fileID: 2027240637}
   - {fileID: 1984825368}
   - {fileID: 324334740}
+  - {fileID: 620702741}
