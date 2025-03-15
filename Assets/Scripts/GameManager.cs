@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     private Player control;
     int switchOption= 0;
+    public event Action<int> OnOpengates;
 
     public Color Red { get => red;}
     public Color Green { get => green;}
@@ -43,6 +44,10 @@ public class GameManager : MonoBehaviour
         control.Hue.Switch.started += OnSwitch;
         selected = ColorSelected.Red;
         SetRed(new InputAction.CallbackContext());
+    }
+    public void Opengates(int id)
+    {
+        OnOpengates?.Invoke(id);
     }
 
     private void OnSwitch(InputAction.CallbackContext context)
