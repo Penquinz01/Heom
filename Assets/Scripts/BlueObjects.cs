@@ -19,5 +19,8 @@ public class BlueObjects : MonoBehaviour,IColor
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = GameManager.Instance.Blue;
-    }  
+    }
+    void OnDestroy() {
+        Remove();
+    }
 }

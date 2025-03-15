@@ -19,6 +19,9 @@ public class RedObjects : MonoBehaviour, IColor
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = GameManager.Instance.Red;
     }
+    void OnDestroy() {
+        Remove();
+    }
     // Update is called once per frame
 
 }

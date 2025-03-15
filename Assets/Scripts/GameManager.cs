@@ -35,13 +35,14 @@ public class GameManager : MonoBehaviour
         Instance = this;
         control = new Player();
         impulseSource = GetComponent<CinemachineImpulseSource>();
-        control.Enable();
+        
         control.Hue.Switch.started += OnSwitch;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        control.Enable();
         selected = ColorSelected.Red;
         //SetRed();
     }
@@ -196,6 +197,9 @@ public class GameManager : MonoBehaviour
     }
     public void ReloadScene()
     {
+        redObjects.Clear();
+        blueObjects.Clear();
+        greenObjects.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -17,4 +17,7 @@ public class GreenObjects : MonoBehaviour,IColor
     {
         GameManager.Instance.RemoveGreen(this);
     }
+    void OnDestroy() {
+        Remove();
+    }
 }
